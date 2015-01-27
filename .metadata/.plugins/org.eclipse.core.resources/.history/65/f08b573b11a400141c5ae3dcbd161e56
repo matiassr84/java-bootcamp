@@ -1,0 +1,10 @@
+
+public class CreditCard {
+	private String Name;
+	private int CCnumber;
+
+
+	public void setName(String Name){
+
+	}	
+}

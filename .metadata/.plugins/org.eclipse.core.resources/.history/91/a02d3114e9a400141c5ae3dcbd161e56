@@ -1,0 +1,19 @@
+
+public class CreditCard {
+	private String name;
+	private int ccnumber;
+	private ShoppingList total;
+
+	public CreditCard(){
+		total=new ShoppingList();
+	}
+	
+	public void setName(String name){
+		this.name=name;
+	}	
+	
+	public void setCCnumber(int ccnumber){
+		this.ccnumber=ccnumber;
+		
+	}
+}

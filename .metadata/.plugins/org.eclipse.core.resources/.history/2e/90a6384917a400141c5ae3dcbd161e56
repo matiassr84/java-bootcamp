@@ -1,0 +1,101 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Supermarket {
+	private ArrayList<Item> ProductDB;
+	private ShoppingList ShL=new ShoppingList();
+	private Scanner sc=new Scanner(System.in);
+	private CreditCard creditcard;
+	private Paypal paypal;
+	
+	
+	public Supermarket(){
+		ProductDB=new ArrayList<Item>();
+		creditcard= new CreditCard();
+		paypal=new Paypal();
+	}
+	
+	// Method that add products on the DB, only if are not added
+	public void AddProduct(String name,double price){
+		Item buy=new Item();
+		boolean exist=false;
+		int ind=0;
+		for(int i=0;i<ProductDB.size();i++){
+			if(name.equals(ProductDB.get(i).getItemName())){
+				exist=true;
+				ind=i;
+				break;
+			}
+		}
+		if(!exist){
+		buy.setItemName(name);
+		buy.setItemPrice(price);
+		ProductDB.add(buy);
+		}
+		else{
+			
+			ProductDB.get(ind).counter();
+		}
+	}
+	
+	// Method that removes product on the DB
+	public void RemProduct(String name){
+		for(int i=0;i<ProductDB.size();i++){
+			if(name==ProductDB.get(i).getItemName())
+				ProductDB.remove(i);
+				//exist=true;
+		}
+	}
+	
+	// Method that shows all the products in the DB
+	public void listProducts(){
+		System.out.println("SuperMarket stock");
+		System.out.println("NAME"+"\t\tPRICE"+"\t\tSTOCK");
+		for(int i=0;i<ProductDB.size();i++){
+		System.out.println((i+1)+"."+ProductDB.get(i).getItemName() + 
+				"\t\t$" + ProductDB.get(i).getItemPrice() + 
+				"\t\t   "+ProductDB.get(i).getCounter());
+		}
+		}
+	
+	// Method to add a product to the shopping list
+	public void SellProduct(int i){
+		ShL.BuyProduct(ProductDB.get(i-1));
+	}
+	
+	public void showList(){
+		ShL.list();
+	}
+	
+	public void getTotal(int x){
+	switch(x){
+		case 1:
+			System.out.println("PAYPAL PAYMENT");
+			System.out.println("Email: ");
+			paypal.setemail(sc.next());
+			System.out.println("Password: ");
+			paypal.setPass(sc.next());
+			System.out.println(ShL.subtotal() - ShL.getCheapest());
+			break;
+		case 2:
+			System.out.println("CREDITCARD PAYMENT");
+			System.out.println("Name: ");
+			creditcard.setName(sc.next());
+			System.out.println("Password: ");
+			creditcard.setCCnumber(sc.nextInt());
+			System.out.println(ShL.subtotal()*0.9);
+			break;
+		case 3:
+			System.out.println("CASH PAYMENT");
+			System.out.println(ShL.subtotal() - ShL.getMexpensive());
+			break;
+	}
+}
+	
+	public int listsize(){
+		return ProductDB.size();
+	}
+	
+}
+
+

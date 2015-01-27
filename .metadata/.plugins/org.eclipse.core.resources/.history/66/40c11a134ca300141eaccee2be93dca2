@@ -1,0 +1,39 @@
+import javax.print.attribute.standard.PrinterLocation;
+
+
+public class Product {
+	public String name;
+	public double price;
+	public int productcounter;
+	
+	public Product(String name, double price){
+		this.name=name;
+		this.price=price;
+		productcounter=1;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	
+	public void setName(String name){
+		this.name=name;
+	}
+	
+	public double getPrice(){
+		return price;
+	}
+	
+	public void setPrice(double price){
+		this.price=price;
+	}
+	
+	public void counter(){
+		productcounter++;
+	}
+	
+	public String toString(){
+		
+		return ("Name: " + name + "   $ " + price+ "   contunter" + productcounter);
+	}
+}

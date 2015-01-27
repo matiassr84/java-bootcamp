@@ -1,0 +1,5 @@
+
+public class Paypal {
+private String Email;
+private String Pass;
+}

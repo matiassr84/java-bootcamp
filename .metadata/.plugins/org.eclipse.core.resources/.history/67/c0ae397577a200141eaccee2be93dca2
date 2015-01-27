@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+public class ShoppingList {
+	// Products contained on a shopping list
+	public ArrayList<Product> ProductList;
+	public Product prod;
+	public boolean exist;
+	
+	public ShoppingList(){
+		ProductList=new ArrayList<Product>();
+	}
+	
+	public void addProdut(Product product){
+	for(Product pro:ProductList){
+			prod.counter();
+			exist=true;
+	}
+	if(!exist)
+		ProductList.add(product);
+	}
+	
+	public void removeProdut(Product product){
+		ProductsList.remove(product);
+	}
+}

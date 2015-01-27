@@ -1,0 +1,21 @@
+//import java.util.Scanner;
+
+public class Client {
+	public static void main(String[] args){
+		Supermarket sm=new Supermarket();
+		//Paypal p=new Paypal();
+		
+		sm.AddProduct("TOMO", 2.37);
+		sm.AddProduct("ONION", 4.66);
+		sm.AddProduct("MEAT", 2.56);
+		sm.AddProduct("MEAT", 2.56);
+		sm.AddProduct("ppp", 2.599);	
+		sm.listProducts();
+		sm.SellProduct(2);
+		sm.SellProduct(1);
+		sm.SellProduct(2);
+		sm.showList();
+		sm.getTotal(1);
+		//System.out.println(p.Total());
+	}
+}

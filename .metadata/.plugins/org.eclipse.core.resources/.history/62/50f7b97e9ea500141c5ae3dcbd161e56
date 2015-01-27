@@ -1,0 +1,23 @@
+public class Offers {
+	private String offerName;
+	private double offerDiscount;
+
+	public Offers() {
+	}
+
+	public void setOffer(String offerName) {
+		this.offerName = offerName;
+	}
+
+	public String getOffer() {
+		return offerName;
+	}
+
+	public void setOPrice(double offerPrice) {
+		this.offerDiscount = offerDiscount;
+	}
+
+	public double getOPrice() {
+		return offerPrice;
+	}
+}

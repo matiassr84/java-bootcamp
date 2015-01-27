@@ -1,0 +1,18 @@
+//import java.util.Scanner;
+
+public class Client {
+	public static void main(String[] args){
+		Supermarket sm=new Supermarket();
+		System.out.println(sm.listsize());
+		sm.AddProduct("TOMATO", 2.37);
+		sm.listProducts();
+		sm.AddProduct("ONION", 4.66);
+		sm.listProducts();
+		sm.AddProduct("MEAT", 2.56);
+		sm.listProducts();
+		sm.AddProduct("ppp", 2.599);	
+		System.out.println(sm.listsize());
+		sm.listProducts();
+		
+	}
+}

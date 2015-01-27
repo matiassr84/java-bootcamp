@@ -1,0 +1,29 @@
+public class Offers {
+	private String offerName;
+	private String offerItem;
+	private double offerDiscount;
+
+	public Offers() {
+	}
+
+	public void setOffer(String offerName) {
+		this.offerName = offerName;
+	}
+
+	public String getOffer() {
+		return offerName;
+	}
+
+	public void setOPrice(double offerDiscount) {
+		this.offerDiscount = offerDiscount;
+	}
+
+	public double getODiscount() {
+		return offerDiscount;
+	}
+	
+	public void priceoffer(double itemprice,String name){
+		System.out.println(offerName+ "/t$"+(itemprice*offerDiscount*0.01)+
+				"/n/t" + name + "/t $ " + itemprice);
+	}
+}

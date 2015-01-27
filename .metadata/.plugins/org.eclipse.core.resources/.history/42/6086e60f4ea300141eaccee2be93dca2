@@ -1,0 +1,25 @@
+
+public class Supermarket {
+public static void main(String[] args){
+	ShoppingList ShL=new ShoppingList();
+	Product pr=new Product("tomato",38.5);
+	Product pr1=new Product("papa",38.5);
+	Product pr2=new Product("lechuga",38.5);
+	Product pr3=new Product("ades",38.5);
+	Product pr4=new Product("pera",38.5);
+	
+	
+	ShL.addProdut(pr);
+	ShL.addProdut(pr);
+	ShL.addProdut(pr1);
+	ShL.addProdut(pr2);
+	//System.out.println(ShL.get(0));
+	ShL.addProdut(pr3);
+	ShL.addProdut(pr);
+	ShL.addProdut(pr);
+	ShL.addProdut(pr4);
+//	System.out.println(ShL.getSize());
+	System.out.println("NAME"+"\t\tPRICE"+"\t\tQUANTITY\n");
+	ShL.list();
+}
+}

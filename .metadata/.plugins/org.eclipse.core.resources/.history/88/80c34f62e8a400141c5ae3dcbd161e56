@@ -1,0 +1,18 @@
+
+public class Paypal {
+private String email;
+private String pass;
+
+public Paypal(){
+	
+}
+
+public void setemail(String email){
+	this.email=email;
+}	
+
+public void setPass(String pass){
+	this.pass=pass;
+	
+}
+}

@@ -1,0 +1,40 @@
+import javax.print.attribute.standard.PrinterLocation;
+
+
+public class Product {
+	// Attributes of Product, productcounter is used for quantity in the list
+	// and for stock in Supermarket
+	private String name;
+	private double price;
+	private int productcounter;
+	
+	public Product(){
+		productcounter=0;
+		
+	}
+	
+	public String getName(){
+		return name;
+	}
+	
+	public void setName(String name){
+		this.name=name;
+	}
+	
+	public double getPrice(){
+		return price;
+	}
+	
+	public void setPrice(double price){
+		this.price=price;
+	}
+	
+	public void counter(){
+		productcounter++;
+	}
+	
+	public String toString(){
+		
+		return (name + "\t\t$ " + price+ "\t\t" + productcounter);
+	}
+}

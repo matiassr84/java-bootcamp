@@ -1,0 +1,71 @@
+import java.util.ArrayList;
+
+public class Supermarket {
+	private ArrayList<Product> ProductDB;
+	private ShoppingList ShL=new ShoppingList();
+	
+	
+	
+	public Supermarket(){
+		ProductDB=new ArrayList<Product>();
+	}
+	
+	// Method that add products on the DB, only if are not added
+	public void AddProduct(String name,double price){
+		Product buy=new Product();
+		boolean exist=false;
+		int ind=0;
+		for(int i=0;i<ProductDB.size();i++){
+			if(name.equals(ProductDB.get(i).getName())){
+				exist=true;
+				ind=i;
+				break;
+			}
+		}
+		if(!exist){
+		buy.setName(name);
+		buy.setPrice(price);
+		System.out.println(buy.getName());
+		ProductDB.add(buy);
+		}
+		else{
+			System.out.println("contador");
+			ProductDB.get(ind).counter();
+		}
+	}
+	
+	// Method that removes product on the DB
+	public void RemProduct(String name){
+		for(int i=0;i<ProductDB.size();i++){
+			if(name==ProductDB.get(i).getName())
+				ProductDB.remove(i);
+				//exist=true;
+		}
+	}
+	
+	// Method that shows all the products in the DB
+	public void listProducts(){
+		System.out.println("NAME"+"\t\tPRICE"+"\t\tSTOCK");
+		for(int i=0;i<ProductDB.size();i++){
+		System.out.println((i+1)+"."+ProductDB.get(i).getName() + 
+				"\t\t$" + ProductDB.get(i).getPrice() + 
+				"\t\t   "+ProductDB.get(i).getCounter());
+		}
+		}
+	
+	// Method to add a product to the shopping list
+	public void SellProduct(int i){
+		ShL.BuyProduct(ProductDB.get(i-1));
+	}
+	
+	public void showList(){
+		ShL.list();
+	}
+	
+	public int listsize(){
+		return ProductDB.size();
+	}
+	
+}
+
+

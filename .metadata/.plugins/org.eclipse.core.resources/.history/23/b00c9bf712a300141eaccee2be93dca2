@@ -1,0 +1,40 @@
+
+import java.util.ArrayList;
+
+public class ShoppingList {
+	// Products contained on a shopping list
+	public ArrayList<Product> ProductList;
+	public Product prod;
+
+	
+	public ShoppingList(){
+		ProductList=new ArrayList<Product>();
+	}
+	
+	// Add product function,if it already exist, then increase the product counter
+	public void addProdut(Product product){
+	boolean exist=false;
+	System.out.println("hola");
+		for(int i=0;i<ProductList.size();i++){
+				if(product.getName()==ProductList.get(i).getName())	{
+				product.counter();
+				System.out.println("hola");
+				exist=true;
+		}
+	}
+	if(!exist)
+		ProductList.add(product);
+	}
+	
+	// Remove product function
+	public void removeProdut(Product product){
+		ProductList.remove(product);
+	}
+	
+	public String getName(){
+		return ProductList.get(),
+	}
+	public String list(){
+		return ProductList.toString();
+	}
+}
