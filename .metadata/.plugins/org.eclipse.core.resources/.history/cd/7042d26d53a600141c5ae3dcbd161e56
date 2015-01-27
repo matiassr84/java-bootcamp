@@ -38,9 +38,9 @@ public class Supermarket {
 		buy.setItemName(name);
 		buy.setItemPrice(price);
 		ProductDB.add(buy);
-		System.out.println("A notification was sent to the manager");
 		}
 		else{
+			
 			ProductDB.get(ind).counter();
 		}
 	}
@@ -51,22 +51,6 @@ public class Supermarket {
 			if(name==ProductDB.get(i).getItemName())
 				ProductDB.remove(i);
 				//exist=true;
-		}
-	}
-	
-	public void changePrice(String name,double newprice){
-		boolean exist=false;
-		int ind=0;
-		for(int i=0;i<ProductDB.size();i++){
-			if(name.equals(ProductDB.get(i).getItemName())){
-				exist=true;
-				ind=i;
-				break;
-			}
-		}
-		if(!exist){
-		ProductDB.get(ind).setItemPrice(newprice);
-		System.out.println("A notification was sent to the manager");
 		}
 	}
 	
@@ -97,24 +81,27 @@ public class Supermarket {
 		DecimalFormat decimal=new DecimalFormat("0.000");
 	switch(x){
 		case 1:
+			//System.out.println(showOffer());
+			
 			paypal.printTotal(ShL.subtotal(), ShL.getCheapest());
 			paymentcounter++;
+			
 			ShL=new ShoppingList();
-			System.out.println("A notification was sent to the manager");
 			break;
 		case 2:
+			//System.out.println(showOffer());
 			creditcard.getTotal(ShL.subtotal());
 			paymentcounter++;
 			ShL=new ShoppingList();
-			System.out.println("A notification was sent to the manager");
 			break;
 		case 3:
+			//System.out.println(showOffer());
+			
 			System.out.println("CASH PAYMENT");
 			System.out.println("TOTAL TO PAY BY CASH: " 
 			+ "\t$"+ decimal.format((ShL.subtotal() - ShL.getMexpensive())));
 			paymentcounter++;
 			ShL=new ShoppingList();
-			System.out.println("A notification was sent to the manager");
 			break;
 	}
 }
@@ -125,6 +112,7 @@ public class Supermarket {
 		for(int i=0;i<OfferDB.size();i++){
 			if(offeritem.equals(OfferDB.get(i).getOfferItem())){
 				exist=true;
+				
 				break;
 			}
 		}
@@ -133,7 +121,6 @@ public class Supermarket {
 		off.setOPrice(price);
 		off.setOfferItem(offeritem);
 		OfferDB.add(off);
-		System.out.println("A notification was sent to the manager");
 		}
 	}
 	

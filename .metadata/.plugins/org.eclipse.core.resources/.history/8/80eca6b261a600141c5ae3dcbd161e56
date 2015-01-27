@@ -27,23 +27,20 @@ public class CreditCard {
 		System.out.println("Name: ");
 		setName(sc.next());
 		do{
-		correct=true;
 		System.out.println("CREDITCARD NUMBER: ");
-		compare=sc.next();
+		number=sc.nextInt();
+		compare=Integer.toString(number);
 		for (int i = 0; i < compare.length(); i++) {
             if (Character.isDigit(compare.charAt(i))) {
             } else {
                 correct = false;
-                break;
             }
         } 
-		if(correct){
-			number= Integer.parseInt(compare);
-			setCCnumber(number);
-		}
+		if(correct)
+		setCCnumber(number);
 		else
 			System.out.println("Credit card number incorrect. Only numbers allowed");
-			}while(!correct);
+			}while(correct=false);
 		System.out.println("TOTAL TO PAY WITH CREDITCARD: " 
 		+ "\t$"+ decimal.format(subtotal*0.9));
 	}

@@ -21,22 +21,20 @@ public class Offers {
 	public double getODiscount() {
 		return offerDiscount;
 	}
-
-	public void setOfferItem(String offerItem) {
-		this.offerItem = offerItem;
+	public void setOfferItem(String offerItem){
+		this.offerItem=offerItem;
 	}
-
-	public String getOfferItem() {
+	
+	public String getOfferItem(){
 		return offerItem;
 	}
-
-	public double priceTOdiscount(double itemprice) {
-		return itemprice * offerDiscount * 0.01;
+	
+	public double priceTOdiscount(double itemprice){
+		return itemprice*offerDiscount*0.01;
 	}
-
-	public void priceoffer(double itemprice) {
-		System.out.println("\n" + offerName + "\t $"
-				+ (itemprice - (itemprice * offerDiscount * 0.01)) + "\n\t"
-				+ offerItem + "\t $ " + itemprice);
+	public void priceoffer(double itemprice){
+				System.out.println("\n" + offerName+ "\t $" + 
+				(itemprice - (itemprice*offerDiscount*0.01))+
+				"\n\t" + offerItem + "\t $ " + itemprice);
 	}
 }

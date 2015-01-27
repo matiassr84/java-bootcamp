@@ -54,22 +54,6 @@ public class Supermarket {
 		}
 	}
 	
-	public void changePrice(String name,double newprice){
-		boolean exist=false;
-		int ind=0;
-		for(int i=0;i<ProductDB.size();i++){
-			if(name.equals(ProductDB.get(i).getItemName())){
-				exist=true;
-				ind=i;
-				break;
-			}
-		}
-		if(!exist){
-		ProductDB.get(ind).setItemPrice(newprice);
-		System.out.println("A notification was sent to the manager");
-		}
-	}
-	
 	// Method that shows all the products in the DB
 	public void listProducts(){
 		System.out.println("SuperMarket stock");
@@ -100,13 +84,11 @@ public class Supermarket {
 			paypal.printTotal(ShL.subtotal(), ShL.getCheapest());
 			paymentcounter++;
 			ShL=new ShoppingList();
-			System.out.println("A notification was sent to the manager");
 			break;
 		case 2:
 			creditcard.getTotal(ShL.subtotal());
 			paymentcounter++;
 			ShL=new ShoppingList();
-			System.out.println("A notification was sent to the manager");
 			break;
 		case 3:
 			System.out.println("CASH PAYMENT");
@@ -114,7 +96,6 @@ public class Supermarket {
 			+ "\t$"+ decimal.format((ShL.subtotal() - ShL.getMexpensive())));
 			paymentcounter++;
 			ShL=new ShoppingList();
-			System.out.println("A notification was sent to the manager");
 			break;
 	}
 }

@@ -54,22 +54,6 @@ public class Supermarket {
 		}
 	}
 	
-	public void changePrice(String name,double newprice){
-		boolean exist=false;
-		int ind=0;
-		for(int i=0;i<ProductDB.size();i++){
-			if(name.equals(ProductDB.get(i).getItemName())){
-				exist=true;
-				ind=i;
-				break;
-			}
-		}
-		if(!exist){
-		ProductDB.get(ind).setItemPrice(newprice);
-		System.out.println("A notification was sent to the manager");
-		}
-	}
-	
 	// Method that shows all the products in the DB
 	public void listProducts(){
 		System.out.println("SuperMarket stock");

@@ -6,8 +6,6 @@ public class ShoppingList {
 	// Products contained on a shopping list
 	private ArrayList<Item> ProductList;
 	private double subtotal;
-	private double cheapest;
-	private double expensive;
 
 	// private Product prod;
 
@@ -76,24 +74,23 @@ public class ShoppingList {
 		}
 		return expensive * 0.9;
 	}
-	
+
 	public double subtotal() {
 		return subtotal;
 	}
 	
 	public void getoffer(ArrayList<Offers> OfferDB){
 		DecimalFormat decimal=new DecimalFormat("0.000");
-		cheapest=ProductList.get(0).getItemPrice();
-		for(int j=0;j<ProductList.size();j++){
-			for(int i=0;i<OfferDB.size();i++){
+		for(int i=0;i<OfferDB.size();i++){
+			for(int j=0;j<ProductList.size();j++){
 				if(OfferDB.get(i).getOfferItem().equals(ProductList.get(j).getItemName())){
 					OfferDB.get(i).priceoffer(ProductList.get(j).getItemPrice());
-					subtotal=subtotal-OfferDB.get(i).priceTOdiscount(ProductList.get(j).getItemPrice());
+					subtotal=subtotal-OfferDB.get(i).priceTOdiscount(ProductList.get(j).getItemPrice())*ProductList.get(j).getCounter();
 					break;
 				}
+						
 			}
 		}
-		
 	System.out.println("Subtotal whith offers discounts: $"+decimal.format(subtotal));
 	}
 }

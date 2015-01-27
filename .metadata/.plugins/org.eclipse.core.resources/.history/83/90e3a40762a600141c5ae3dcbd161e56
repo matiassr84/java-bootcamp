@@ -43,7 +43,7 @@ public class CreditCard {
 		}
 		else
 			System.out.println("Credit card number incorrect. Only numbers allowed");
-			}while(!correct);
+			}while(correct=false);
 		System.out.println("TOTAL TO PAY WITH CREDITCARD: " 
 		+ "\t$"+ decimal.format(subtotal*0.9));
 	}
