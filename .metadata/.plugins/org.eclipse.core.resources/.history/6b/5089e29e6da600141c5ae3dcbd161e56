@@ -1,0 +1,12 @@
+public class PaymentFactory {
+	public Payment getPayment(int i) {
+		switch (i) {
+		case 1:
+			return new CreditCard();
+		case 2:
+			return new Paypal();
+		case 3:
+			return new Cash();
+		}
+	}
+}

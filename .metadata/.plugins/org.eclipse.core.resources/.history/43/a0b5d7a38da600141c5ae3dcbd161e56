@@ -1,0 +1,4 @@
+
+public abstract class Item {
+	public abstract void SetItem(String name,double price);
+}

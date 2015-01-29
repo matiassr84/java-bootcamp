@@ -1,0 +1,7 @@
+
+public class cash extends Payment {
+	@Override
+	public void pay(double subtotal){
+	System.out.println(subtotal);
+	}
+}

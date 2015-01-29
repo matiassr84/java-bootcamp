@@ -1,0 +1,12 @@
+import java.text.DecimalFormat;
+
+public class Cash extends Payment {
+	@Override
+	public void pay(double subtotal){
+		DecimalFormat decimal=new DecimalFormat("0.000");
+		System.out.println("CASH PAYMENT");
+		System.out.println("TOTAL TO PAY BY CASH: " 
+		+ "\t$"+ decimal.format(subtotal));
+		System.out.println(subtotal);
+	}
+}

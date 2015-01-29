@@ -2,7 +2,6 @@ INDEX VERSION 1.127+C:\Users\Matias\Documents\GitHub\java-bootcamp\.metadata\.pl
 2958705335.index
 590428145.index
 248351807.index
-1821155803.index
 881303192.index
 3097394219.index
 2448026493.index
